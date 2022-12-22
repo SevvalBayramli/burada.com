@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h3>Admin Paneli</h3>
+
+<hr>
+<div>
+  
+  <form action="/admin_search" method="post" class="form-inline my-2 my-lg-0">
+    <a href="/add" id="thema" type="submit" class="btn btn-light">Bilgisayar Ekle</a> 
+    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p>
+    <input style=" width: 40%;background-color:#ffffff;color:rgb(6, 0, 0);"class="form-control mr-sm-2" type="search" placeholder="Getirmek istediğiniz bilgisayarın model numarasını giriniz..." name="keyword"  aria-label="Search">
+    <button class="btn btn-outline-light my-2 my-sm-0" id="thema" type="submit">Ara</button>
+    
+  </form>
+  <br>
+  <div class="row " width="auto length%"  >
+  {% if computers %}
+  {% for computer in computers %}
+  <div class="col"  >
+  <div class="card" style="width: 18rem;">
+    <a href="/detail/{{computer.model_no}}">
+      <img class="card-img-top" height="250" src="{{computer['gorsel_link']}}" alt="Card image cap"></a>
+    
+    <div class="card-body">
+      <h6 class="card-title">{{computer['urun_aciklamasi']}}</h6>
+      <button type="button" class="btn btn-light">
+        <h7 style="color: #000000;"> <b>{{computer['fiyat']}}</b></h7>
+      </button>
+      <a href="/update/{{computer['model_no']}}" style="background-color:#a7ea9b" class="btn btn-light">Güncelle</a>
+      <a href="/delete/{{computer['model_no']}}" style="background-color:#ea9b9b" class="btn btn-light">Sil</a>
+    </div>
+    
+  </div></div>
+  {% endfor %}
+  {% endif %}
+  
+</div>
+
+
+</div>
+
+
+
+{% endblock body %}

@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h3>Admin Paneli</h3>
+<hr>
+{% from "includes/formhelpers.html" import render_field %}
+<form method=post>
+    <dl>
+      {{ render_field(form.baslik,class="form-control") }}
+      {{ render_field(form.marka,class="form-control") }}
+      {{ render_field(form.model_no,class="form-control") }}
+      {{ render_field(form.model_adi,class="form-control") }}
+      {{ render_field(form.ram,class="form-control") }}
+      {{ render_field(form.isletim_sistemi,class="form-control") }}
+      {{ render_field(form.islemci_tipi,class="form-control") }}
+      {{ render_field(form.islemci_nesli,class="form-control") }}
+      {{ render_field(form.ekran_boyutu,class="form-control") }}
+      {{ render_field(form.disk_turu,class="form-control") }}
+      {{ render_field(form.disk_boyutu,class="form-control") }}
+      {{ render_field(form.fiyat,class="form-control") }}
+      {{ render_field(form.puan,class="form-control") }}
+      {{ render_field(form.gorsel,class="form-control") }}
+
+
+    </dl>
+    <button type="submit" style="background-color:#a7ea9b" class="btn btn-light">Bilgisayar Güncelle</button>
+  </form>
+  <br><br><br><br>
+
+
+
+
+
+{% endblock body %}

@@ -1,0 +1,135 @@
+
+{% include "layout.html" %}
+{% block body %}
+
+
+<div class="row " width="auto length%"  >
+    <div class="col" width="auto length%" >
+        <div class="d-flex justify-content-center " width="autolength%">
+            <form action="/" method="POST" >
+                <div class="dropdown ">
+                <button id="thema" class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <h7 id="thema" >Markalar</h7>
+                  </button>
+                  <div  class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    {% for marka in markalar %}
+                    <input  type="checkbox" value={{marka['marka']}} name="markaChecked" > {{marka['marka']}}
+                    <br>
+                {% endfor %}
+                  </div></div>
+            
+                <hr>
+                <div class="dropdown ">
+                    <button id="thema" class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <h7 id="thema" >Disk Boyutu</h7>
+                      </button>
+                      <div  class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        {% for disk in disk_boyutu %}
+                        <input  type="checkbox" value={{disk['disk_boyutu']}} name="diskChecked" > {{disk['disk_boyutu']}}
+                        <br>
+                    {% endfor %}
+                      </div></div>
+                  <hr>
+                  <div class="dropdown ">
+                    <button id="thema" class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <h7 id="thema" >Disk Türü</h7>
+                      </button>
+                      <div  class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        {% for disk in disk_turu %}
+                        <input  type="checkbox" value={{disk['disk_turu']}} name="diskTuruChecked" > {{disk['disk_turu']}}
+                        <br>
+                    {% endfor %}
+                      </div></div>
+                  <hr>
+                
+                  <div class="dropdown ">
+                    <button id="thema" class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <h7 id="thema">Ekran Boyutu</h7>
+                      </button>
+                      <div  class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                {% for ekran_boyutu in ekran_boyutu %}
+                <input  type="checkbox" value={{ekran_boyutu['ekran_boyutu']}} name="ekranChecked" > {{ekran_boyutu['ekran_boyutu']}}
+                    <br>
+                {% endfor %}
+                      </div></div>
+                    <hr>
+                <div class="dropdown ">
+                <button id="thema" class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <h7 id="thema">Ram</h7>
+                    </button>
+                    <div  class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    {% for ram in ram %}
+                    <input  type="checkbox" value={{ram['ram']}} name="ramChecked" > {{ram['ram']}}
+                        <br>
+                    {% endfor %}
+                    </div></div>
+                        <hr>
+                        <div class="dropdown ">
+                          <button id="thema" class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <h7 id="thema">Puan</h7>
+                              </button>
+                              <div  class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              {% for puan in Puan %}
+                              <input  type="checkbox" value={{puan['puan']}} name="puanChecked" > {{puan['puan']}}
+                                  <br>
+                              {% endfor %}
+                              </div></div>
+                                  <hr>
+                        
+                        <div class="input-group">
+                            <input type="text" placeholder="minimum" name ="minPrice" class="form-control">
+                            <input type="text" placeholder="maximum" name="maxPrice" class="form-control"> <a>
+                            <button id="thema" class="input-group-text" type="submit" name="keyword" id="thema">Fiyat Aralığı</button></a>
+                            
+                        </div>
+                        <hr>
+
+
+                <button  class="btn btn-outline-light my-2 my-sm-0" id="thema" type="submit">Filtrele</button>    
+            </form>
+            
+        </div>
+
+        
+        
+    </div>
+    <div class="container text-center" action="/" method="POST">
+        <div class="btn-group-lg" role="group" aria-label="Basic example" id="thema">
+            <a href="/lowestprice"><button  type="button" name="endusukfiyat"  class="btn btn-light">En düşük fiyat</button></a>
+            <a href="/highestprice"><button type="button" name="enyuksekfiyat"  class="btn btn-light">En yüksek fiyat</button></a>
+            <a href="/newest"><button type="button" name="enyeniurunler" class="btn btn-light">En yeni ürünler</button></a>
+        </div>
+          <hr>
+    
+        <div class="row align-items-start">
+    {% for computer in computers %}
+    <div class="col"  >
+        <a href="/detail/{{computer.model_no}}">
+        <div class="card " style="width: 18rem;" id="thema">
+            <img src="{{computer.gorsel_link}}"
+             class="card-img-top" ></a>
+             
+            <div class="card-body text-center">
+              {% for i in range(1,6)%}
+          {% if i<= computer['puan'] %}
+      <img src="https://cdn.cimri.io/web-images/star.svg" width="15" height="15">
+          {% else %}
+      <img src="https://cdn.cimri.io/web-images/empty-star.svg" width="15" height="15">
+      {% endif %}
+      {% endfor %}
+              <h6 class="card-title">{{computer.urun_aciklamasi}}</h6>
+              <button type="button" class="btn btn-light">
+                <h7 style="color: #000000;"> <b>{{computer['fiyat']}}</b></h7>
+              </button>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+    
+    
+</div>
+
+
+
+{% endblock %}

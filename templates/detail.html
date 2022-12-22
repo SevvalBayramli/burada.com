@@ -1,0 +1,89 @@
+
+{% include "layout.html" %}
+{% block body %}
+
+<div class="row align-items-start" style="width: 510;height: 510;">
+    <div class="col" >
+        <div class="card" style="text-align: center;" id="detailThema">
+            <img style="display: block; margin: auto;" 
+            src="{{computerDetail['gorsel_link']}}" class="float-right" alt="Paris" width="500" height="500">
+</div>
+        
+            
+    </div>
+    <div class="col">
+        <div class="card-body">
+          {% for i in range(1,6)%}
+          {% if i<= computerDetail['puan'] %}
+      <img src="https://cdn.cimri.io/web-images/star.svg" width="15" height="15">
+          {% else %}
+      <img src="https://cdn.cimri.io/web-images/empty-star.svg" width="15" height="15">
+      {% endif %}
+      {% endfor %}
+            <h5 class="card-title">{{computerDetail['marka']}}</h5>
+
+            <p class="card-text"><b>{{computerDetail['urun_aciklamasi']}}</b></p>
+
+            <button type="button" class="btn btn-light">
+              <h7 style="color: #000000;"> <b>{{computerDetail['fiyat']}}</b></h7>
+            </button>
+          </div>
+          
+
+    </div>
+</div>
+
+</div>
+
+
+</div>
+<br>
+<h5 scope="col" style="text-align: center;">Genel Özellikler</h5>
+  <table class="table table-striped" style="margin-left:0; margin-right:0;">
+      
+      <tbody>
+        <tr>
+          <th scope="row">Marka</th>
+          <td>{{computerDetail['marka']}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Model Adı</th>
+          <td>{{computerDetail['model_adi']}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Model No</th>
+          <td>{{computerDetail['model_no']}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Ekran Boyutu</th>
+          <td>{{computerDetail['ekran_boyutu']}}</td>
+        </tr>
+        <tr>
+          <th scope="row">İşlemci Nesli</th>
+          <td>{{computerDetail['islemci_nesli']}}</td>
+        </tr>
+        <tr>
+          <th scope="row">İşlemci Tipi</th>
+          <td>{{computerDetail['islemci_tipi']}}</td>
+        </tr>
+        <tr>
+          <th scope="row">İşletim Sistemi</th>
+          <td>{{computerDetail['isletim_sistemi']}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Disk Boyutu</th>
+          <td>{{computerDetail['disk_boyutu']}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Disk Turu</th>
+          <td>{{computerDetail['disk_turu']}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Ram</th>
+          <td>{{computerDetail['ram']}}</td>
+        </tr>        
+      </tbody>
+  </table>
+
+
+{% endblock %}
