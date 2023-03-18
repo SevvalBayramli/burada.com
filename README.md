@@ -1,6 +1,6 @@
 # Burada.com
 
-Burada.com, Python Flask framework'ü kullanılarak geliştirilmiş bir e-ticaret sitesidir. Bu proje, bilgisayar fiyatlarını karşılaştırmanıza ve sıralamanıza olanak sağlayan üç farklı web sitesinden veri toplar.
+Burada.com, Python Flask framework'ü kullanılarak geliştirilmiş bir e-ticaret sitesidir. Bu proje, üç farklı web sitesinden veri toplayarak bilgisayar fiyatlarını karşılaştırmanıza ve sıralamanıza olanak sağlar.
 
 ## **Kullanım**
 
