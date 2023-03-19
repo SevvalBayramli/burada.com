@@ -29,9 +29,9 @@ python app.py
 
 ## **Özellikler**
 
-- Kullanıcılar, 3 farklı web sitesinden bilgisayar fiyatlarını karşılaştırabilirler.
+- Kullanıcılar, bilgisayar fiyatlarını ve özelliklerini görüntüleyebilir.
 - Kullanıcılar, fiyatları sıralayabilir ve arama yapabilirler.
-- Kullanıcılar, seçtikleri ürünü sepete ekleyebilirler ve daha sonra satın alabilirler.
+- Kullanıcılar, eğer admin paneline erişimleri varsa siteye ürün ekleme, çıkarma ve güncelleme yapabilirler.
 
 ## **Katkıda Bulunma**
 
